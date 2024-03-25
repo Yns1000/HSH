@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXListView?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<?import io.github.palexdev.materialfx.controls.MFXCheckListView?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="890.0" prefWidth="1315.0" style="-fx-background-color: 111;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hsh.Controller">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="43.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/logo_name.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="50.0" right="30.0" top="5.0" />
+               </HBox.margin>
+            </ImageView>
+            <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="36.0" prefWidth="6.0">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin></Separator>
+            <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="35.0" prefWidth="300.0" style="-fx-border-radius: 50px; -fx-border-color: #D7D7D7;">
+               <children>
+                  <TextField prefHeight="30.0" prefWidth="250.0" promptText="Trouvez votre nouvelle demeure..." style="-fx-background-color: rgba(0,0,0,0);">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label maxHeight="-Infinity" prefHeight="20.0">
+                     <graphic>
+                        <FontIcon iconLiteral="fa-search" iconSize="16" textAlignment="CENTER" wrappingWidth="13.142857551574707" />
+                     </graphic>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin></Pane>
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="267.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="143.0" text="Se connecter">
+                     <font>
+                        <Font name="Lato Light" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="53.0" style="-fx-hgap: 20px; -fx-padding: 5px; -fx-background-color: #193f43; -fx-background-radius: 50px; -fx-border-radius: 50px; -fx-border-width: 5px; -fx-border-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" styleClass="-fx-hgap: 20px;    -fx-padding: 40px;    -fx-background-color: #2969c0;    -fx-background-radius: 50px;    -fx-border-radius: 50px;    -fx-border-width: 5px;    -fx-border-color: black;    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);" textAlignment="CENTER">
+                     <graphic>
+                        <FontIcon iconColor="WHITE" iconLiteral="fa-user" iconSize="20" text="" textAlignment="CENTER" wrappingWidth="32.14285755157471" />
+                     </graphic>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="788.0" prefWidth="241.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="241.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="47.0" prefWidth="143.0" text="Annonces">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+                     <children>
+                        <FontIcon iconLiteral="fa-star" iconSize="23" text="" wrappingWidth="21.142857551574707" />
+                        <Label prefHeight="47.0" prefWidth="131.0" text="Populaires">
+                           <font>
+                              <Font name="Berlin Sans FB" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+                     <children>
+                        <FontIcon iconLiteral="fa-clock-o" iconSize="23" wrappingWidth="19.714284896850586" />
+                        <Label prefHeight="47.0" prefWidth="131.0" text="Nouveautés">
+                           <font>
+                              <Font name="Berlin Sans FB" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+                     <children>
+                        <FontIcon iconLiteral="fa-list-ul" iconSize="20" />
+                        <Label prefHeight="47.0" prefWidth="131.0" text="Catégories">
+                           <font>
+                              <Font name="Berlin Sans FB" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Separator prefWidth="200.0" />
+            <VBox prefHeight="200.0" prefWidth="241.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="47.0" prefWidth="143.0" text="Vos annonces">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+                     <children>
+                        <FontIcon iconLiteral="fa-home" iconSize="23" />
+                        <Label prefHeight="47.0" prefWidth="131.0" text="Mes annonces">
+                           <font>
+                              <Font name="Berlin Sans FB" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+                     <children>
+                        <FontIcon iconLiteral="fa-heart" iconSize="23" />
+                        <Label prefHeight="47.0" prefWidth="131.0" text="Favoris">
+                           <font>
+                              <Font name="Berlin Sans FB" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+                     <children>
+                        <FontIcon iconLiteral="fa-wechat" iconSize="23" />
+                        <Label prefHeight="47.0" prefWidth="131.0" text="Conversations">
+                           <font>
+                              <Font name="Berlin Sans FB" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="241.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="47.0" prefWidth="143.0" text="Mon compte">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+                     <children>
+                        <FontIcon iconLiteral="fa-wrench" iconSize="23" />
+                        <Label prefHeight="47.0" prefWidth="131.0" text="Paramètres">
+                           <font>
+                              <Font name="Berlin Sans FB" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+                     <children>
+                        <FontIcon iconLiteral="fa-user" iconSize="23" />
+                        <Label prefHeight="47.0" prefWidth="131.0" text="Profil">
+                           <font>
+                              <Font name="Berlin Sans FB" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="loginButton" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+                     <children>
+                        <FontIcon iconLiteral="fa-sign-out" iconSize="23" />
+                        <Label prefHeight="47.0" prefWidth="131.0" text="Se connecter">
+                           <font>
+                              <Font name="Berlin Sans FB" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets top="80.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="1076.0" text="Bienvenu(e)" textAlignment="CENTER">
+               <font>
+                  <Font name="Lato Bold" size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL5" minHeight="27.0" minWidth="70.0" prefHeight="35.0" prefWidth="127.0" styleClass="outline-button" stylesheets="@style.css" text="CONNEXION" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Lato Bold" size="16.0" />
+                     </font></MFXButton>
+                  <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="36.0" prefWidth="0.0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Separator>
+                  <MFXButton buttonType="RAISED" depthLevel="LEVEL5" minHeight="27.0" minWidth="70.0" prefHeight="35.0" prefWidth="135.0" styleClass="outline-button" stylesheets="@style.css" text="INSCRIPTION">
+                     <font>
+                        <Font name="Lato Bold" size="16.0" />
+                     </font></MFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" maxWidth="-Infinity" prefHeight="540.0" prefWidth="1039.0">
+               <children>
+                  <VBox prefHeight="540.0" prefWidth="422.0" spacing="20.0">
+                     <children>
+                        <Label prefHeight="47.0" prefWidth="422.0">
+                           <graphic>
+                              <MFXCheckListView fx:id="checkList" prefWidth="170.0" GridPane.columnIndex="2" GridPane.rowIndex="2"
+                                                GridPane.rowSpan="3">
+                                 <GridPane.margin>
+                                    <Insets bottom="15.0"/>
+                                 </GridPane.margin>
+                              </MFXCheckListView>
+                           </graphic>
+                        </Label>
+                        <Label prefHeight="47.0" prefWidth="422.0" text="Label">
+                           <graphic>
+                              <MFXTextField floatMode="BORDER" floatingText="Email" floatingTextGap="20.0" graphicTextGap="13.0" prefHeight="16.0" prefWidth="422.0">
+                                 <font>
+                                    <Font name="Lato Bold" size="14.0" />
+                                 </font>
+                              </MFXTextField>
+                           </graphic>
+                        </Label>
+                        <Label prefHeight="47.0" prefWidth="422.0">
+                           <graphic>
+                              <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" borderGap="0.0" floatMode="BORDER" floatingText="Mot de passe" maxHeight="-Infinity" prefHeight="7.0" prefWidth="422.0">
+                                 <font>
+                                    <Font name="Lato Bold" size="13.0" />
+                                 </font>
+                              </MFXPasswordField>
+                           </graphic>
+                        </Label>
+                        <Label prefHeight="47.0" prefWidth="422.0">
+                           <graphic>
+                              <MFXPasswordField allowCopy="true" allowCut="true" allowPaste="true" borderGap="0.0" floatMode="BORDER" floatingText="Confirmez le mot de passe" maxHeight="-Infinity" prefHeight="7.0" prefWidth="422.0">
+                                 <font>
+                                    <Font name="Lato Bold" size="13.0" />
+                                 </font>
+                              </MFXPasswordField>
+                           </graphic>
+                        </Label>
+                        <Hyperlink text="Mot de passe oublié" />
+                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="422.0">
+                           <graphic>
+                              <MFXButton buttonType="RAISED" depthLevel="LEVEL5" minHeight="27.0" minWidth="70.0" prefHeight="37.0" prefWidth="256.0" style="-fx-border-radius: 50; -fx-border-radius: 50 !important; -fx-border-color: #193f43; -fx-border-width: 2;" stylesheets="@style.css" text="Se connecter">
+                                 <font>
+                                    <Font name="Lato Bold" size="16.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="outline-button" />
+                                    <String fx:value="loginbut" />
+                                 </styleClass>
+                              </MFXButton>
+                           </graphic>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </VBox>
+
+                     </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

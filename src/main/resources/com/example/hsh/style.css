@@ -1,0 +1,48 @@
+.mouse-moved:hover{
+    -fx-background-color: #E4E4E4;
+}
+
+.transparent{
+    -fx-border-color: #ffffff;
+}
+
+.rounded-container {
+    -fx-padding: 10;
+    -fx-background-color: firebrick;
+}
+
+.button_use:hover {
+    -fx-background-color: #53e7ff !important;
+}
+
+.button_use{
+    -fx-background-color:  #43b9cc;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+
+}
+
+#custom {
+    -fx-background-color: -mfx-purple;
+    -fx-text-fill: white
+}
+
+.outline-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #193f43;
+    -fx-border-radius: 3;
+
+    -fx-text-fill: #193f43;
+}
+
+.outline-button:hover,
+.outline-button:focused {
+    -fx-background-color: #193f43;
+    -fx-text-fill: white;
+}
+
+.loginbut:hover,
+.loginbut:focused {
+    -fx-border-radius: 50 !important;
+    -fx-background-radius: 50;
+}
