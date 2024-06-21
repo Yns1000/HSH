@@ -43,11 +43,131 @@ public class Bien {
     @Column(name = "NOMBRE_PIECES", nullable = false)
     private Integer nombrePieces;
 
-    @Column(name = "ImageSrc", nullable = false)
-    private String imageSrc;
 
     @Column(name = "prixBase", nullable = false)
     private Float prixBase;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ID_PROPRIETAIRE", nullable = false)
+    private Tier idProprietaire;
+
+    @Column(name = "Note_5", nullable = false)
+    private Integer note5;
+
+    @Column(name = "Note_1", nullable = false)
+    private Integer note1;
+
+    @Column(name = "Note_2", nullable = false)
+    private Integer note2;
+
+    @Column(name = "Note_3", nullable = false)
+    private Integer note3;
+
+    @Column(name = "Note_4", nullable = false)
+    private Integer note4;
+
+    @Column(name = "LIB_VOIE", nullable = false, length = 200)
+    private String libVoie;
+
+    @Column(name = "TYPE_BIEN", nullable = false, length = 250)
+    private String typeBien;
+
+    @Column(name = "REDUCTION", nullable = false)
+    private Double reduction;
+
+    @Column(name = "TypeVente", nullable = false, length = 100)
+    private String typeVente;
+
+    @Column(name = "Description", nullable = false, length = 2000)
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getTypeVente() {
+        return typeVente;
+    }
+
+    public void setTypeVente(String typeVente) {
+        this.typeVente = typeVente;
+    }
+
+    public Double getReduction() {
+        return reduction;
+    }
+
+    public void setReduction(Double reduction) {
+        this.reduction = reduction;
+    }
+
+    public String getTypeBien() {
+        return typeBien;
+    }
+
+    public void setTypeBien(String typeBien) {
+        this.typeBien = typeBien;
+    }
+
+    public String getLibVoie() {
+        return libVoie;
+    }
+
+    public void setLibVoie(String libVoie) {
+        this.libVoie = libVoie;
+    }
+
+    public Integer getNote4() {
+        return note4;
+    }
+
+    public void setNote4(Integer note4) {
+        this.note4 = note4;
+    }
+
+    public Integer getNote3() {
+        return note3;
+    }
+
+    public void setNote3(Integer note3) {
+        this.note3 = note3;
+    }
+
+    public Integer getNote2() {
+        return note2;
+    }
+
+    public void setNote2(Integer note2) {
+        this.note2 = note2;
+    }
+
+    public Integer getNote1() {
+        return note1;
+    }
+
+    public void setNote1(Integer note1) {
+        this.note1 = note1;
+    }
+
+    public Integer getNote5() {
+        return note5;
+    }
+
+    public void setNote5(Integer note5) {
+        this.note5 = note5;
+    }
+
+    public Tier getIdProprietaire() {
+        return idProprietaire;
+    }
+
+    public void setIdProprietaire(Tier idProprietaire) {
+        this.idProprietaire = idProprietaire;
+    }
 
     public Float getPrixBase() {
         return prixBase;
@@ -55,14 +175,6 @@ public class Bien {
 
     public void setPrixBase(Float prixBase) {
         this.prixBase = prixBase;
-    }
-
-    public String getImageSrc() {
-        return imageSrc;
-    }
-
-    public void setImageSrc(String imageSrc) {
-        this.imageSrc = imageSrc;
     }
 
     public Integer getId() {

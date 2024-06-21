@@ -6,32 +6,52 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="173.0" prefWidth="351.0" spacing="15.0" style="-fx-border-radius: 20px; -fx-background-radius: 20px; -fx-padding: 20px; -fx-hgap: 20px; -fx-border-width: 20px; -fx-background-color: #112f34;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hsh.CardController">
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="178.0" prefWidth="387.0" spacing="15.0" style="-fx-border-radius: 15px; -fx-background-radius: 20px; -fx-padding: 20px; -fx-hgap: 20px; -fx-border-width: 2px; -fx-background-color: #fff; -fx-border-color: #112f34;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hsh.CardController">
    <children>
-      <ImageView fx:id="imageView" fitHeight="129.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageView" fitHeight="146.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/logo.png" />
          </image>
       </ImageView>
-      <VBox prefHeight="100.0" prefWidth="202.0">
+      <VBox prefHeight="153.0" prefWidth="171.0" style="-fx-padding: 0px 0px 0px 8px; -fx-border-color: #000; -fx-border-width: 1px; -fx-border-style: hidden hidden hidden solid;">
          <children>
-            <Label fx:id="titreDuBien" prefHeight="71.0" prefWidth="202.0" text="Appartement &#10;15e arrondissment" textFill="WHITE" wrapText="true">
+            <HBox prefHeight="24.0" prefWidth="161.0">
+               <children>
+                  <HBox fx:id="vote_rate" prefHeight="24.0" prefWidth="107.0" />
+                  <Pane fx:id="fav" prefHeight="24.0" prefWidth="33.0">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Pane>
+                  <Pane fx:id="settings" prefHeight="24.0" prefWidth="33.0">
+                     <children>
+                        <ImageView fitHeight="18.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../settings.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <Label fx:id="titreDuBien" prefHeight="56.0" prefWidth="161.0" text="Appartement &#10;15e arrondissment" textFill="#112f34" wrapText="true">
                <font>
                   <Font name="Lato Bold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="prixDuBien" prefHeight="8.0" prefWidth="202.0" text="256 000 €" textFill="WHITE" wrapText="true">
+            <Label fx:id="prixDuBien" prefHeight="8.0" prefWidth="202.0" text="256 000 €" textFill="#112f34" wrapText="true">
                <font>
                   <Font name="Lato Regular" size="14.0" />
                </font>
             </Label>
-            <StackPane alignment="BOTTOM_RIGHT" prefHeight="50.0" prefWidth="100.0">
+            <StackPane alignment="BOTTOM_RIGHT" prefHeight="29.0" prefWidth="161.0">
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" styleClass="button_use" stylesheets="@style.css" text="En savoir plus" textFill="WHITE">
+                  <Button fx:id="viewItem" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" styleClass="button_use" stylesheets="@style.css" text="En savoir plus" textFill="WHITE">
                      <font>
                         <Font name="Lato Bold" size="14.0" />
                      </font>
@@ -40,8 +60,11 @@
             </StackPane>
          </children>
          <HBox.margin>
-            <Insets top="20.0" />
+            <Insets />
          </HBox.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </VBox>
    </children>
 </HBox>

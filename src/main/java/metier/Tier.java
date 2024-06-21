@@ -1,6 +1,7 @@
 package metier;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.time.LocalDate;
 
@@ -48,6 +49,40 @@ public class Tier {
 
     @Column(name = "NUMERO_SS_TIERS", length = 15)
     private String numeroSsTiers;
+
+    @Column(name = "MDP_TIERS", nullable = false)
+    private String mdpTiers;
+
+    @ColumnDefault("0")
+    @Column(name = "Admin", nullable = false)
+    private Integer admin;
+
+    @Column(name = "photo", length = 500)
+    private String photo;
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public Integer getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Integer admin) {
+        this.admin = admin;
+    }
+
+    public String getMdpTiers() {
+        return mdpTiers;
+    }
+
+    public void setMdpTiers(String mdpTiers) {
+        this.mdpTiers = mdpTiers;
+    }
 
     public Integer getId() {
         return id;

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="bpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1029.0" prefWidth="1315.0" style="-fx-background-color: 111;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hsh.categController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <fx:include source="navbar.fxml" />
+               </children>
+            </Pane>
+         </children>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="788.0" prefWidth="241.0" BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets top="80.0" />
+         </BorderPane.margin>
+         <children>
+            <Pane fx:id="menu" prefHeight="730.0" prefWidth="241.0">
+               <children>
+                  <fx:include source="connexion_menu.fxml" />
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="880.0" prefWidth="1074.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="welcomeText" contentDisplay="CENTER" prefHeight="47.0" prefWidth="585.0" textFill="#193f43">
+               <font>
+                  <Font name="Lato Bold" size="24.0" />
+               </font>
+            </Label>
+            <ScrollPane prefHeight="853.0" prefWidth="1034.0" style="-fx-background-color: #fff;">
+               <content>
+                  <VBox fx:id="main" prefHeight="2500.0" prefWidth="1024.0" style="-fx-background-color: #fff;" />
+               </content>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </ScrollPane>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

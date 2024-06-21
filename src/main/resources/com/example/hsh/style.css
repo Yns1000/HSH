@@ -12,14 +12,20 @@
 }
 
 .button_use:hover {
-    -fx-background-color: #53e7ff !important;
+    -fx-background-color: #193f43 !important;
+    -fx-text-fill: #ffffff !important;
 }
 
 .button_use{
     -fx-background-color:  #43b9cc;
     -fx-border-radius: 30;
     -fx-background-radius: 30;
+    -fx-text-fill: #ffffff;
 
+}
+
+.searchAdvanced{
+    -fx-border-radius: 10 !important;
 }
 
 #custom {
@@ -45,4 +51,45 @@
 .loginbut:focused {
     -fx-border-radius: 50 !important;
     -fx-background-radius: 50;
+}
+
+.settings-button{
+    -fx-background-color: transparent;
+    -fx-text-fill: #193f43;
+    -fx-border-style: hidden solid hidden hidden;
+    -fx-border-color: #193f43;
+    -fx-border-width: 1;
+}
+
+.settings-button:hover,
+.settings-button:focused {
+    -fx-background-color: #193f43;
+    -fx-text-fill: white;
+}
+
+.valid-button:hover,
+.valid-button:focused {
+    -fx-background-color: green !important;
+    -fx-text-fill: white !important;
+}
+
+.invalid-button:hover,
+.invalid-button:focused {
+    -fx-background-color: red !important;
+    -fx-text-fill: white  !important;
+}
+
+.search:hover{
+    -fx-background-color: #E4E4E4;
+}
+
+.modifer-button:hover,
+.modifer-button:focused {
+    -fx-background-color: #193f43 !important;
+    -fx-text-fill: white  !important;
+}
+
+.modifer-button{
+    -fx-background-color: #fff !important;
+    -fx-text-fill: #193f43  !important;
 }

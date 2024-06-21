@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox prefHeight="730.0" prefWidth="241.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hsh.MenuController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="241.0">
+         <children>
+            <Label contentDisplay="CENTER" prefHeight="47.0" prefWidth="143.0" text="Annonces">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="15.0" />
+               </VBox.margin>
+            </Label>
+            <HBox fx:id="famousItemsButton" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+               <children>
+                  <FontIcon iconLiteral="fa-star" iconSize="23" text="" wrappingWidth="21.142857551574707" />
+                  <Label prefHeight="47.0" prefWidth="131.0" text="Populaires">
+                     <font>
+                        <Font name="Berlin Sans FB" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox fx:id="newItemsButton" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+               <children>
+                  <FontIcon iconLiteral="fa-clock-o" iconSize="23" wrappingWidth="19.714284896850586" />
+                  <Label prefHeight="47.0" prefWidth="131.0" text="Nouveautés">
+                     <font>
+                        <Font name="Berlin Sans FB" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox fx:id="categButtons" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+               <children>
+                  <FontIcon iconLiteral="fa-list-ul" iconSize="20" />
+                  <Label prefHeight="47.0" prefWidth="131.0" text="Catégories">
+                     <font>
+                        <Font name="Berlin Sans FB" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets top="30.0" />
+         </VBox.margin>
+      </VBox>
+      <Separator prefWidth="200.0" />
+      <VBox prefHeight="151.0" prefWidth="241.0">
+         <children>
+            <Label contentDisplay="CENTER" prefHeight="47.0" prefWidth="143.0" text="Vos annonces">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="15.0" />
+               </VBox.margin>
+            </Label>
+            <HBox fx:id="myitemsButton" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+               <children>
+                  <FontIcon iconLiteral="fa-home" iconSize="23" />
+                  <Label prefHeight="47.0" prefWidth="131.0" text="Mes annonces">
+                     <font>
+                        <Font name="Berlin Sans FB" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox fx:id="favItemsButton" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+               <children>
+                  <FontIcon iconLiteral="fa-heart" iconSize="23" />
+                  <Label prefHeight="47.0" prefWidth="131.0" text="Favoris">
+                     <font>
+                        <Font name="Berlin Sans FB" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="241.0">
+         <children>
+            <Label contentDisplay="CENTER" prefHeight="47.0" prefWidth="143.0" text="Mon compte">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="15.0" />
+               </VBox.margin>
+            </Label>
+            <HBox fx:id="settingsButton" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+               <children>
+                  <FontIcon iconLiteral="fa-wrench" iconSize="23" />
+                  <Label prefHeight="47.0" prefWidth="131.0" text="Paramètres">
+                     <font>
+                        <Font name="Berlin Sans FB" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox fx:id="myAccountButton" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+               <children>
+                  <FontIcon iconLiteral="fa-user" iconSize="23" />
+                  <Label prefHeight="47.0" prefWidth="131.0" text="Profil">
+                     <font>
+                        <Font name="Berlin Sans FB" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox fx:id="loginButton" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0" styleClass="mouse-moved" stylesheets="@style.css">
+               <children>
+                  <FontIcon iconLiteral="fa-sign-out" iconSize="23" />
+                  <Label fx:id="stateConnexion" prefHeight="47.0" prefWidth="131.0" text="Connexion">
+                     <font>
+                        <Font name="Berlin Sans FB" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>

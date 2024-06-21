@@ -10,7 +10,10 @@ module com.example.hsh {
     requires org.kordamp.bootstrapfx.core;
     requires jakarta.persistence;
     requires org.hibernate.orm.core;
+    requires jbcrypt;
+    requires java.desktop;
 
     opens com.example.hsh to javafx.fxml;
     exports com.example.hsh;
-}
+    opens metier to javafx.base, org.hibernate.orm.core;
+    }

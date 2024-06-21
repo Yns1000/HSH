@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxWidth="-Infinity" prefHeight="635.0" prefWidth="1034.0" style="-fx-border-radius: 5px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hsh.TypeTiersController">
+   <children>
+      <VBox prefHeight="606.0" prefWidth="422.0" spacing="20.0">
+         <children>
+            <Label fx:id="1" contentDisplay="CENTER" prefHeight="19.0" prefWidth="221.0" text="Modifier le type : " textAlignment="CENTER">
+               <font>
+                  <Font name="Lato Bold" size="15.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="58.0" prefWidth="422.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="215.0" text="Modifier le nom du type" textFill="#193f43">
+                     <font>
+                        <Font name="Lato Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nameType" prefHeight="40.0" prefWidth="422.0" promptText="Nom du type..." style="-fx-border-color: #193f43; -fx-border-radius: 5px;">
+                     <font>
+                        <Font name="Lato Bold" size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </VBox>
+            <VBox prefHeight="58.0" prefWidth="422.0">
+               <children>
+                  <Label accessibleRole="CHECK_BOX" prefHeight="18.0" prefWidth="215.0" text="Visibilité" textFill="#193f43">
+                     <font>
+                        <Font name="Lato Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="visibleType" mnemonicParsing="false" prefHeight="42.0" prefWidth="131.0" text="Visible">
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </CheckBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets top="30.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="644.0" prefWidth="613.0" spacing="20.0">
+         <children>
+            <Button fx:id="saveType" mnemonicParsing="false" prefHeight="42.0" prefWidth="290.0" style="-fx-text-fill: green; -fx-border-color: green;" stylesheets="@style.css" text="VALIDER LES MODIFICATIONS" textFill="#00861d">
+               <padding>
+                  <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font name="Lato Bold" size="14.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="outline-button" />
+                  <String fx:value="valid-button" />
+               </styleClass>
+            </Button>
+            <Separator maxHeight="-Infinity" orientation="VERTICAL" prefHeight="36.0" prefWidth="0.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Separator>
+            <Button fx:id="deleteType" mnemonicParsing="false" prefHeight="42.0" prefWidth="286.0" style="-fx-text-fill: red; -fx-border-color: red;" stylesheets="@style.css" text="SUPPRIMER LE TYPE">
+               <padding>
+                  <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font name="Lato Bold" size="14.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="outline-button" />
+                  <String fx:value="invalid-button" />
+               </styleClass>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</HBox>
