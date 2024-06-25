@@ -300,6 +300,11 @@ public class Controller implements Initializable {
             typeVente.getItems().addAll("Vente", "Location");
         }
 
+        if(selectProfile != null){
+            List<TypeTier> typeTiers = entityManager.createQuery("SELECT t FROM TypeTier t WHERE t.visible = true", TypeTier.class).getResultList();
+            selectProfile.getItems().addAll(typeTiers);
+        }
+
         if (typeBien != null) {
             typeBien.getItems().addAll("Appartement", "Maison", "Terrain", "Local commercial", "Garage", "Autre");
         }

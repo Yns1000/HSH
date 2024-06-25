@@ -14,6 +14,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
@@ -94,10 +95,29 @@ public class ItemController implements Initializable {
     private ImageView droite;
 
     @FXML
-    private Label desc;
+    private TextArea desc;
 
     @FXML
     private Button retour;
+
+    @FXML
+    private ImageView star1;
+
+    @FXML
+    private ImageView star2;
+
+    @FXML
+    private ImageView star3;
+
+    @FXML
+    private ImageView star4;
+
+    @FXML
+    private ImageView star5;
+
+    @FXML
+    private VBox avis_user;
+
 
     //Index de la photo actuellement affichée
     private int index = 0;
@@ -138,37 +158,7 @@ public class ItemController implements Initializable {
         typeContrat.setText(bien.getTypeVente());
         desc.setText(bien.getDescription());
 
-        if (bien.getNote1() == null) {
-            bien.setNote1(0);
-        }
-        if (bien.getNote2() == null) {
-            bien.setNote2(0);
-        }
-        if (bien.getNote3() == null) {
-            bien.setNote3(0);
-        }
-        if (bien.getNote4() == null) {
-            bien.setNote4(0);
-        }
-        if (bien.getNote5() == null) {
-            bien.setNote5(0);
-        }
-        int totalVotes = bien.getNote1() + bien.getNote2() + bien.getNote3() + bien.getNote4() + bien.getNote5();
-        int totalPoints = bien.getNote1() + bien.getNote2() * 2 + bien.getNote3() * 3 + bien.getNote4() * 4 + bien.getNote5() * 5;
-        int averageRating = totalVotes > 0 ? totalPoints / totalVotes : 0;
 
-        for (int i = 1; i <= 5; i++) {
-            ImageView star = new ImageView();
-            star.setFitHeight(15);
-            star.setFitWidth(15);
-            if (i <= averageRating) {
-                System.out.println("i = " + i);
-                star.setImage(new Image("https://cdn-icons-png.flaticon.com/512/60/60962.png"));
-            } else {
-                star.setImage(new Image("https://static.vecteezy.com/system/resources/previews/009/992/275/original/star-icon-sign-symbol-design-free-png.png"));
-            }
-            avis.getChildren().add(star);
-        }
 
 
 
@@ -235,6 +225,9 @@ public class ItemController implements Initializable {
         });
 
 
+        initializeStars(bien);
+
+        avis_user.setVisible(UserSession.getInstance().isLoggedIn());
 
 
 
@@ -252,6 +245,78 @@ public class ItemController implements Initializable {
         entityManager = entityManagerFactory.createEntityManager();
     }
 
+    private void initializeStars(Bien bien) {
+        Image starEmpty = new Image("https://w7.pngwing.com/pngs/501/448/png-transparent-favourite-chart-favorites-heart-rating-top-web-icon.png");
+        Image starFull = new Image("https://w7.pngwing.com/pngs/275/802/png-transparent-black-heart-illustration-heart-computer-icons-heart-shaped-silhouette-love-heart-black.png");
+
+        star1.setImage(starEmpty);
+        star2.setImage(starEmpty);
+        star3.setImage(starEmpty);
+        star4.setImage(starEmpty);
+        star5.setImage(starEmpty);
+
+        star1.setOnMouseClicked(event -> updateRating(bien, 1));
+        star2.setOnMouseClicked(event -> updateRating(bien, 2));
+        star3.setOnMouseClicked(event -> updateRating(bien, 3));
+        star4.setOnMouseClicked(event -> updateRating(bien, 4));
+        star5.setOnMouseClicked(event -> updateRating(bien, 5));
+
+        // Calculate the average rating
+        int totalVotes = bien.getNote1() + bien.getNote2() + bien.getNote3() + bien.getNote4() + bien.getNote5();
+        int totalPoints = bien.getNote1() + bien.getNote2() * 2 + bien.getNote3() * 3 + bien.getNote4() * 4 + bien.getNote5() * 5;
+        int averageRating = totalVotes > 0 ? totalPoints / totalVotes : 0;
+
+        setStarImages(averageRating, starFull, starEmpty);
+    }
+
+    private void setStarImages(int rating, Image starFull, Image starEmpty) {
+        star1.setImage(rating >= 1 ? starFull : starEmpty);
+        star2.setImage(rating >= 2 ? starFull : starEmpty);
+        star3.setImage(rating >= 3 ? starFull : starEmpty);
+        star4.setImage(rating >= 4 ? starFull : starEmpty);
+        star5.setImage(rating >= 5 ? starFull : starEmpty);
+    }
+
+    private void updateRating(Bien bien, int rating) {
+        EntityTransaction transaction = entityManager.getTransaction();
+        try {
+            transaction.begin();
+
+            // Update the notes based on the rating
+            switch (rating) {
+                case 1:
+                    bien.setNote1(bien.getNote1() + 1);
+                    break;
+                case 2:
+                    bien.setNote2(bien.getNote2() + 1);
+                    break;
+                case 3:
+                    bien.setNote3(bien.getNote3() + 1);
+                    break;
+                case 4:
+                    bien.setNote4(bien.getNote4() + 1);
+                    break;
+                case 5:
+                    bien.setNote5(bien.getNote5() + 1);
+                    break;
+            }
+
+            entityManager.merge(bien);
+            transaction.commit();
+
+            // Recalculate the average rating
+            int totalVotes = bien.getNote1() + bien.getNote2() + bien.getNote3() + bien.getNote4() + bien.getNote5();
+            int totalPoints = bien.getNote1() + bien.getNote2() * 2 + bien.getNote3() * 3 + bien.getNote4() * 4 + bien.getNote5() * 5;
+            int averageRating = totalVotes > 0 ? totalPoints / totalVotes : 0;
+
+            setStarImages(averageRating, new Image("https://w7.pngwing.com/pngs/275/802/png-transparent-black-heart-illustration-heart-computer-icons-heart-shaped-silhouette-love-heart-black.png"), new Image("https://w7.pngwing.com/pngs/501/448/png-transparent-favourite-chart-favorites-heart-rating-top-web-icon.png"));
+        } catch (Exception e) {
+            if (transaction.isActive()) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
 
     private void setOnClickLoadScene(Node node, String fxmlFile) {
         if (node != null) {

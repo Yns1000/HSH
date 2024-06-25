@@ -144,6 +144,7 @@ public class categController implements Initializable {
                     .getResultList();
 
             for (Favbien favBien : favBiens) {
+                System.out.println(favBien);
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("card.fxml"));
                     HBox cardBox = loader.load();
